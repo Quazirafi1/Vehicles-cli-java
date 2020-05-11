@@ -5,7 +5,7 @@ public class Start {
 
         Menu menu = new Menu();
 
-        // Vehicle v1 = new Vehicle("M101", 1, 1400, 20);
+        // Sports v1 = new Sports("M101", 1400, 20, true);
 
         // v1.showDetails();
     }

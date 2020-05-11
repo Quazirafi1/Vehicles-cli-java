@@ -4,6 +4,9 @@ public class Vehicle {
     private int enginePower;
     private int tireSize;
 
+    public Vehicle() {
+    }
+
     public Vehicle(String modelNumber, int engineType, int enginePower, int tireSize) {
         System.out.println("Vehicle Parameter");
         this.modelNumber = modelNumber;
@@ -26,5 +29,9 @@ public class Vehicle {
         System.out.println("Engine Type: " + EngineTypeMap(engineType));
         System.out.println("Engine Power : " + enginePower + " cc");
         System.out.println("Tire Size: " + tireSize);
+    }
+
+    public void showModelOnly() {
+        System.out.println("Model Number: " + modelNumber);
     }
 }
