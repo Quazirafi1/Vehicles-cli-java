@@ -32,6 +32,10 @@ public class Vehicle {
     }
 
     public void showModelOnly() {
-        System.out.println("Model Number: " + modelNumber);
+        System.out.println(modelNumber);
+    }
+
+    public String GetVehicleType() {
+        return "Normal";
     }
 }

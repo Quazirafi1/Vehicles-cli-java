@@ -20,4 +20,7 @@ public class Sports extends Vehicle {
         System.out.println("Turbo: " + TurboMap(turbo));
     }
 
+    public String GetVehicleType() {
+        return "Sports";
+    }
 }

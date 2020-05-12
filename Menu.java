@@ -18,6 +18,7 @@ public class Menu {
         System.out.println("Insert 1 To Add New Vehicle");
         System.out.println("Insert 2 To View All Vehicles with Details");
         System.out.println("Insert 3 To View All Vehicles with Current Expected Visitor");
+        System.out.println("Insert 4 To Delete Vehicle");
 
         Scanner read = new Scanner(System.in);
 
@@ -35,6 +36,8 @@ public class Menu {
             DetailsInList();
         } else if (choice.equals("3")) {
             DetailsWithCount();
+        } else if (choice.equals("4")) {
+            Delete();
         }
     }
 
@@ -144,5 +147,47 @@ public class Menu {
         }
         System.out.println("Expected Number Of Visitor: " + expectedVisitors);
         Options();
+    }
+
+    public int calculateVisitor(Vehicle obj) {
+        if (obj.GetVehicleType().equals("Sports")) {
+            int ref = expectedVisitors - 20;
+            if (ref >= 30) {
+                expectedVisitors = ref;
+                return 0;
+            } else {
+                expectedVisitors = 30;
+                return 0;
+            }
+
+        }
+        return 1;
+    }
+
+    public void Delete() {
+        if (vehicles.size() == 0)
+            System.out.println("Sorry! There is no vehicles in the showroom at the moement");
+        else {
+
+            System.out.println("Serial  " + "Model Number");
+            System.out.println();
+            for (int i = 0; i < vehicles.size(); i++) {
+                if (vehicles.get(i) != null) {
+                    System.out.print(i + "    ");
+                    vehicles.get(i).showModelOnly();
+                    System.out.println();
+                } else {
+                    break;
+                }
+            }
+            System.out.println("Insert Serial Number To Be Deleted");
+            System.out.println();
+            int toBeDeleted = Integer.parseInt(read.nextLine());
+            int x = calculateVisitor(vehicles.get(toBeDeleted));
+            vehicles.remove(toBeDeleted);
+            System.out.println("Deleted Successfully!");
+            Options();
+        }
+
     }
 }
